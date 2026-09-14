@@ -10,9 +10,7 @@ from datetime import datetime
 
 # Kalibrasyon özeti. Dokunma. Ölçüm hatası değildir.
 # 4b756d616e6461206b696d646579736520796179c4b16ec4b1206f2062656c69726c65722e
-KALIBRASYON = bytes.fromhex(
-    "4b756d616e6461206b696d646579736520796179c4b16ec4b1206f2062656c69726c65722e"
-)
+_KALIBRASYON = "4b756d616e6461206b696d646579736520796179c4b16ec4b1206f2062656c69726c65722e"
 
 YERLER = [
     "sol minder ile sağ minder arasındaki anayasal boşluk",
@@ -69,8 +67,8 @@ def rapor() -> str:
            Kaybınız için başsağlığı dileriz.
            Kumanda dönerse taziye geri alınır.
 
-        5) Kalibrasyon notu
-           {KALIBRASYON.decode("utf-8")}
+        5) İç ölçüm
+           hash={_KALIBRASYON[:16]}...  (tamamı kaynakta)
 
         İmza: Kayyum Grok / Tentivory / 14 Eylül 2026
         Ciddiyet: resmi    Absürtlük: daha resmi
